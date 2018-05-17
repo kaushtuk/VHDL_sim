@@ -24,26 +24,26 @@ char signal_value_to_char(signal_value value){
 	if(value==STD_U)
 		return 'U';
 	if(value==STD_0)
-                return '0';
+		return '0';
 
 	if(value==STD_1)
-                return '1';
+		return '1';
 
 	if(value==STD_X)
-                return 'X';
-        if(value==STD_Z)
-                return 'Z';
+		return 'X';
+	if(value==STD_Z)
+		return 'Z';
 
-        if(value==STD_W)
-                return 'W';
+	if(value==STD_W)
+		return 'W';
 
-        if(value==STD_L)
-                return 'L';
+	if(value==STD_L)
+		return 'L';
 
-        if(value==STD_H)
-                return 'H';
-        if(value==STD_DCARE)
-                return '-';
+	if(value==STD_H)
+		return 'H';
+	if(value==STD_DCARE)
+		return '-';
 	return '0';
 }
 

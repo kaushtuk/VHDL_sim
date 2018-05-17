@@ -12,7 +12,7 @@ t_time_line* create_init_event_queue (t_signal *signal_list_head, t_process *pro
 	time_line_head->scheduled_event_queue=(t_event_queue*)malloc(sizeof(t_event_queue));
 	time_line_head->scheduled_event_queue->top=NULL;
 	time_line_head->scheduled_event_queue->bottom=NULL;
-	
+
 	//create evauation events for each process in a queue
 	while(process_list_head!=NULL)
 	{

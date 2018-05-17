@@ -18,7 +18,5 @@ void run_simulation(t_time_line* time_line_head,t_signal* signal_list_head){
 	}while(time_line_head!=NULL);
 }
 
-
-
 #endif
 

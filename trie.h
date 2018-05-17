@@ -24,7 +24,7 @@ void trie_insert(void* object,char* name,trie* root_ptr){
 		root_ptr->object=object;
 		return;
 	}
-	
+
 	//recursive case
 	char temp_index;
 	if(name[0]>='a' && name[0]<='z')
@@ -36,7 +36,7 @@ void trie_insert(void* object,char* name,trie* root_ptr){
 	else if(name[0]=='_')
 		temp_index=62;
 	else if(name[0]=='\\')
-                temp_index=63;
+		temp_index=63;
 	else{
 		printf("ERROR::unknown_trie_symbol\n");
 		exit(EXIT_FAILURE);
@@ -48,30 +48,28 @@ void trie_insert(void* object,char* name,trie* root_ptr){
 
 void* trie_search(char* name,trie* root_ptr){
 	//base case
-        if(name[0]=='\0')
-                return root_ptr->object;
+	if(name[0]=='\0')
+		return root_ptr->object;
 
 	//recursive case
 	char temp_index;
-        if(name[0]>='a' && name[0]<='z')
-                temp_index=name[0]-'a';
-        else if(name[0]>='0' &&name[0]<='9')
-                temp_index=26+(name[0]-'0');
-        else if(name[0]>='A' && name[0]<='Z')
-                temp_index=36+(name[0]-'A');
-        else if(name[0]=='_')
-                temp_index=62;
+	if(name[0]>='a' && name[0]<='z')
+		temp_index=name[0]-'a';
+	else if(name[0]>='0' &&name[0]<='9')
+		temp_index=26+(name[0]-'0');
+	else if(name[0]>='A' && name[0]<='Z')
+		temp_index=36+(name[0]-'A');
+	else if(name[0]=='_')
+		temp_index=62;
 	else if(name[0]=='\\')
-                temp_index=63;
-        else{
+		temp_index=63;
+	else{
 		printf("ERROR::unknown_trie_symbol\n");
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
-        if(root_ptr->next[temp_index]==NULL)
+	if(root_ptr->next[temp_index]==NULL)
 		return NULL;
-        return trie_search(&(name[1]),root_ptr->next[temp_index]);
+	return trie_search(&(name[1]),root_ptr->next[temp_index]);
 }
-
-
 
 #endif
